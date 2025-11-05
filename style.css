@@ -1,0 +1,279 @@
+/* PAGE STYLES */
+/* Reset & variables */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --maxw: 1800px;
+    --gap: 16px;
+    --accent: gold;
+    --muted: rgb(164, 180, 76);
+    --card-bg: #fff;
+    --dark-color: darkgoldenrod;
+    --light-color: lightgoldenrodyellow;
+}
+
+/* page layout */
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.5;
+}
+.container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* header */
+.site-header {
+    background: var(--light-color);
+    border-bottom: 1px solid e6e9ee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1700px;
+    z-index: 3;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+.logo-section {
+    display: flex;
+}
+.logo {
+    padding-top: -5px;
+    margin-top: -5px;
+    width: 40px;
+    height: 40px;
+}
+.brand {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 20px;
+    padding-bottom: -5px;
+    margin-bottom: -5px;
+}
+.topnav {
+    margin-right: 25px;
+    /* z-index: 2; */
+}
+.topnav a {
+    margin-left: 12px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.topnav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--dark-color);
+    transition: width 0.3s ease;
+}
+.topnav a:hover {
+    color: var(--muted);
+}
+.topnav a:hover::after {
+    width: 100%;
+}
+
+/* Products Section */
+main {
+    margin-top: 80px;
+}
+.container .hero {
+    margin-top: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: white;
+}
+.container .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+.container .hero input[type="button"] {
+    background: var(--dark-color);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 12px;
+    color: white;
+}
+
+/* products */
+.container .products {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap);
+}
+.container .products .product {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--light-color);
+    padding-bottom: 8px;
+    text-align: center;
+}
+.container .products img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+.container .products input[type="button"] {
+    background: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+.container .products input[type="button"]:hover {
+    background-color: var(--muted);
+}
+
+/* Updates */
+.updates {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+}
+.updates .update-message {
+    background: var(--accent);
+    width: 25px;
+    height: 25px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 2;
+    bottom: 0;
+}
+
+/* footer */
+footer {
+    background: var(--light-color);
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ABOUT US STYLES */
+.container .about-us {
+    margin-top: 60px;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    background-image: url(./images/about-us-image.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    color: white;
+    position: relative;
+}
+
+.container .about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+.container .about-us > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* CONTACT PAGE STYLES */
+.container.contact {
+    width: 100%;
+    margin: 60px auto;
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .contact-form {
+    width: 100%;
+    gap: 15px;
+}
+
+.container .contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.container .contact-form input,
+.container .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.container .contact-form input[type="submit"] {
+    background: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
